@@ -18,7 +18,6 @@
     {
         //Select one of the values"rock","paper" or "scissors" at random.
         const choices = ["rock", "paper", "scissors"];
-        console.log(choices.length);
         const randomIndex = Math.floor(Math.random()* choices.length);
         //Store it in this variable="compGuess" for later.
         let compGuess = choices[randomIndex];
@@ -39,12 +38,23 @@
     function playRound(playerSelection, computerSelection)
     {
         //check for equality
-        if()
+        if(playerSelection === computerSelection){
+            return "Its a tie!";
+        }
+        else if((playerSelection === "rock" && computerSelection ==="scissors")||
+               (playerSelection ==="paper" && computerSelection === "rock" )||
+               (playerSelection === "scissors" && computerSelection === "paper")){
+                return `You win ${playerSelection} beats ${computerSelection}`
+               }
+        else{
+            return "You lose!"
+        }
     }
 
     
     const computerSelection = getComputerGuess();
     const playerSelection = userGuess();
+    playRound(playerSelection,computerSelection);
     console.log(playRound(playerSelection,computerSelection));
 
    
