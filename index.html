@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tictactoe console game</h2>
+    <p>Goto the console to play or hit f12.</p>
+</body>
+<script>
+    console.log("Gamer!!! you gottta beat the computer.");
+    console.log("I'm locked out until someone beats it.");
+
+    //tictactoe game
+    function getComputerGuess()
+    {
+        //Select one of the values"rock","paper" or "scissors" at random.
+        const choices = ["rock", "paper", "scissors"];
+        console.log(choices.length);
+        const randomIndex = Math.floor(Math.random()* choices.length);
+        //Store it in this variable="compGuess" for later.
+        let compGuess = choices[randomIndex];
+        return compGuess;
+    }
+
+    function userGuess(){
+        //get users value
+        let guess1 = prompt("rock,paper,scissors?: ");
+        //convert it to lowercase
+        let guess = guess1.toLowerCase();
+        return guess;
+        
+    }
+
+
+
+    function playRound(playerSelection, computerSelection)
+    {
+        //check for equality
+        if()
+    }
+
+    
+    const computerSelection = getComputerGuess();
+    const playerSelection = userGuess();
+    console.log(playRound(playerSelection,computerSelection));
+
+   
+</script>
+
+</html>
