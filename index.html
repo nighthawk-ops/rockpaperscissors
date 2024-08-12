@@ -3,77 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock, Paper, Scissors console game</title>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-    <h2>Rock, paper, scissors console game</h2>
-    <p>Goto the console to play or hit f12.</p>
+    <div id="container">
+        <h1 class="title">Rock, Paper, Scissors</h1>
+        <div class="display"></div>
+        <div class="controls">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+        <button id="retry">Restart Game</button>
+    </div>
+    
 </body>
-<script>
-    console.log("Welcome to Rock, Paper, Scissors Console game")
-
-    //get computers choice
-    //create a list of choices the computer can choose from
-    // randomize the choice using indexes. You will need to remember to turn it back to a string.
-    function getComputerChoice(){
-        const choices = ["rock", "paper", "scissors"];
-        compChoice = choices[Math.floor(Math.random()* choices.length)];
-        return compChoice;
-    }
-
-    //Play round
-    // ask for player and computer choices
-    // conversts them to lower case and check for results
-    // im going to set the return values to. 
-    // -1 for lose, 0 for draw, and 1 for win.
-    function playRound(playerSelection, computerSelection){
-        computerSelection = getComputerChoice();
-        playerSelection = prompt("rock, paper, scissors? ")
-        computerChoice = computerSelection.toLowerCase();
-        playerChoice = playerSelection.toLowerCase();
-
-        if (playerChoice === computerChoice){
-            return "Its a tie";
-        }else if((playerChoice === "rock" && computerChoice === "scissors")||
-        (playerChoice === "paper" && computerChoice === "rock")||
-        (playerChoice === "scissors" && computerChoice === "paper")){
-            return "You win!";
-        }else{
-            return "You lose!";
-        }
-    }
-
-
-    // the game will need to keep track of score and pay 5 rounds
-    // so for each round i want to store the result
-    // check if the result was a win to add to player score or a loss to add to computer score
-    // lastly, compare all the scores for each round to give final results.
-    function game(){
-
-        let playerScore = 0;
-        let computerScore = 0;
-
-        for (let round = 1; round <=5; round ++){
-           const result = playRound();
-           console.log(result);
-           
-           if(result.includes("win")){
-            playerScore++;
-           }else if(result.includes("lose")){
-            computerScore++
-           }
-        }
-
-        if (playerScore === computerScore){
-            console.log(`It's a tie, player = ${playerScore} computer = ${computerScore}`);
-        }else if(playerScore > computerScore){
-            console.log(`You win!! player = ${playerScore} & computer = ${computerScore}`);
-        }else{
-            console.log(`You lose. computer = ${computerScore} & player = ${playerScore}`);
-        }
-    }
-
-    game();
-</script>
-
 </html>
