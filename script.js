@@ -68,7 +68,7 @@ function endGame(){
         result.textContent="You lose :(";
     }
 
-    buttons.forEach((button)=>{
+    buttons.children.forEach((button)=>{
         button.children.disabled=true;
     })
     display.appendChild(retry);
