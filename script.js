@@ -71,7 +71,7 @@ function endGame(){
         result.textContent="You lose :(";
     }
 
-    buttons.children.forEach((button)=>{
+    buttons.forEach((button)=>{
         button.removeEventListener("Click");
     })
     display.appendChild(retry);
