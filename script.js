@@ -31,6 +31,9 @@ function getComputerChoice(){
     return compChoice;
 }
 
+if (playerScore == 5 || computerScore == 5) {
+ return false;
+}
 
 function playRound(e){
     let computer = getComputerChoice();
