@@ -72,7 +72,7 @@ function endGame(){
     }
 
     buttons.children.forEach((button)=>{
-        button.disabled=true;
+        button.removeEventListener("Click");
     })
     display.appendChild(retry);
     retry.style.display='block';
